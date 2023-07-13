@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cartera - Todos</title>
+</head>
+<body>
+    <section>
+        <h1>Mis movimientos</h1>
+        <table>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Concepto</th>
+                    <th>Importe</th>
+                </tr>
+                {% for movement in the_movements%}
+                <tr>
+                    <td>{{movement [0] }}</td>
+                    <td>{{movement [1] }}</td>
+                    <td>{{movement [2] }}{{movement [3] }}</td>
+                </tr>
+                {% endfor %}
+
+        </table>
+    </section>
+    
+</body>
+</html>
