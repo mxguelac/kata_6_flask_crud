@@ -1,0 +1,10 @@
+id,date,abstract,amount,currency
+3,2023-01-01,Sueldo,1000,EUR
+4,2023-01-05,"Mi pandereta, que bonita",-20,EUR
+5,2023-01-06,Lotería del niño,250.0,EUR
+6,2023-06-12,lolailo,1000,EUR
+7,2023-06-12,lolailo,1000,EUR
+8,2023-06-05,Medio ambiente,-1000,EUR
+9,2023-06-26,Algo,1000.3,EUR
+10,2023-06-26,aaaa,1000.0,EUR
+11,2023-05-28,Un sueldo,1000.0,EUR

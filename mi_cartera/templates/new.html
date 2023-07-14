@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cartera - Nuevo</title>
+</head>
+<body>
+    <nav>
+        <a href="/" target="_blank">Inicio</a>
+    </nav>
+    <main>
+        <h1>Nueva entrada</h1>
+        <form action="/new_movement" method="post"></form>
+        <div>
+        <label for="date">
+            Fecha:
+        </label>
+        <input type="date" name="date" id="date">
+        </div>
+        <div>
+            <label for="abstract:">
+                Concepto:
+            </label>
+            <input type="text" name="abstract" id="abstract">
+        </div>
+        <div>
+            <label for="amount">Cantidad:</label>
+            <input type="text" name="amount" id="amount" step="0.01">
+        </div>
+        <div>
+            <label for="currency">Moneda:</label>
+            <select name="currency" id="currency">
+                <option value="EUR">Euros</option>
+                <option value="USD">Dólares americanos</option>
+            </select>
+        </div>
+        <div><input name="submit" id="submit" type="submit" value="Enviar">
+        </div>
+    </main>
+    
+</body>
+</html>

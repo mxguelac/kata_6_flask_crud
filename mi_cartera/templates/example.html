@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/register" method="post">
+        {{ the_form.csrf_token }}
+        <div>
+            {{ the_form.user.label }}
+            {{ the_form.user}}
+            {% if the_form.user.errors %}
+                  {% for mensaje in the_form.user.errors %}
+               <p class="error">{{ mensaje }}</p>
+                  {% endfor %}
+               {% endif %}
+        </div>
+        <div>
+            {{ the_form.pwd.label }}
+            {{ the_form.pwd}}
+            {% if the_form.pwd.errors %}
+                  {% for mensaje in the_form.pwd.errors %}
+               <p class="error">{{ mensaje }}</p>
+                  {% endfor %}
+               {% endif %}
+        </div>
+        <div>
+            {{ the_form.rpt_pwd.label }}
+            {{ the_form.rpt_pwd}}
+            {% if the_form.rpt_pwd.errors %}
+                  {% for mensaje in the_form.rpt_pwd.errors %}
+               <p class="error">{{ mensaje }}</p>
+                  {% endfor %}
+               {% endif %}
+        </div>
+        <div>
+            {{ the_form.submit }}
+        </div>
+    </form>
+</body>
+</html>

@@ -1,28 +1,49 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Cartera - Todos</title>
-</head>
-<body>
-    <section>
-        <h1>Mis movimientos</h1>
-        <table>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Concepto</th>
-                    <th>Importe</th>
-                </tr>
-                {% for movement in the_movements%}
-                <tr>
-                    <td>{{movement [0] }}</td>
-                    <td>{{movement [1] }}</td>
-                    <td>{{movement [2] }}{{movement [3] }}</td>
-                </tr>
-                {% endfor %}
+{% extends "base.html" %}
 
-        </table>
-    </section>
-    
-</body>
-</html>
+{%block content %}
+        <h1>Nueva entrada</h1>
+
+        <form action="/new_movement" method="post">
+            {{ the_form.csrf_token }}
+            <div>
+               {{ the_form.date.label }}
+               {{ the_form.date }}
+               {% if the_form.date.errors %}
+                  {% for mensaje in the_form.date.errors %}
+               <p class="error">{{ mensaje }}</p>
+                  {% endfor %}
+               {% endif %}
+
+            </div>
+            <div>
+               {{ the_form.abstract.label }}
+               {{ the_form.abstract }}
+               {% if the_form.abstract.errors %}
+                  {% for mensaje in the_form.abstract.errors %}
+               <p class="error">{{ mensaje }}</p>
+                  {% endfor %}
+               {% endif %}
+            </div>
+            <div>
+               {{ the_form.amount.label }}
+               {{ the_form.amount(step=0.01, type="number", placeholder="Introduce un importe") }}
+               {% if the_form.amount.errors %}
+                  {% for mensaje in the_form.amount.errors %}
+               <p class="error">{{ mensaje }}</p>
+                  {% endfor %}
+               {% endif %}
+            </div>
+            <div>
+               {{ the_form.currency.label }}
+               {{ the_form.currency }}
+               {% if the_form.currency.errors %}
+                  {% for mensaje in the_form.currency.errors %}
+               <p class="error">{{ mensaje }}</p>
+                  {% endfor %}
+               {% endif %}
+            </div>
+            <div>
+               {{ the_form.submit}}
+            </div>
+        </form>
+ {% endblock %}

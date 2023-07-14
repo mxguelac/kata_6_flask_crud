@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/pico.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Mi Cartera - {{ title }}</title>
+</head>
+<body>
+    <header>
+        <p class="container">Mi cartera</p>
+    </header>
+    <nav class="container">
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/new_movement">Nuevo</a></li>
+        </ul>
+
+    </nav>
+    {% with msgs = get_flashed_messages() %}
+        {% if msgs %}
+        <div class="container" id="msg-error">
+           {% for msg in msgs%}
+             <p>{{msg}}</p>
+           {% endfor %}
+        </div>
+        {% endif  %}
+    {% endwith %}
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p class="container">&copy; 2023 - Ramón Maldonado</p>
+    </footer>
+</body>
+</html>
